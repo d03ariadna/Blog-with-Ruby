@@ -1,0 +1,20 @@
+<section class="block mx-auto">
+  <h1 class="text-center text-4xl font-bold mb-8">Articles</h1>
+
+  <section class="max-w-xs rounded overflow-hidden shadow-lg block mt-4 mb-8 mx-auto border border-slate-200">
+    <ul class="px-8 py-8">
+      <% @articles.each do |article|%>
+        <li class="mx-auto text-center">
+          <span class="w-full inline-block bg-gray-200 rounded px-5 py-4 text-base font-semibold text-gray-700  my-2 hover:bg-purple-200 hover:text-purple-700 mx-auto">
+            <%= link_to article.title, article%>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <div class= "bg-indigo-500 hover:bg-indigo-900 text-white font-bold py-4 px-6 rounded focus:outline-none focus:shadow-outline mt-8 block w-fit mx-auto">
+    <%= link_to "Create a New Article", new_article_path %>
+  </div>
+</section>
+

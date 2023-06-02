@@ -1,0 +1,24 @@
+<div class="w-full max-w-xs mx-auto bg-white drop-shadow-lg rounded px-8 pt-6 pb-8 mb-4 border border-slate-200">
+        <%= form_with model: article do |form|%>
+
+            <div class="block mb-4">
+                <%= form.label :title, class: "block text-left text-slate-400 text-sm font-semibold mb-2"%>
+                <%= form.text_field :title, class: "shadow appearance-none border-slate-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-1"%>
+                <% article.errors.full_messages_for(:title).each do |message| %>
+                    <p class="text-red-500 text-xs italic text-left"> <%= message %> </p>
+                <% end %>
+            </div>
+
+            <div class= "block mb-4">
+                <%= form.label :body, class: "block text-left text-slate-400 text-sm font-semibold mb-2"%>
+                <%= form.text_field :body, class: "shadow appearance-none border-slate-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-1"%>
+                <% article.errors.full_messages_for(:body).each do |message| %>
+                    <p class="text-red-500 text-xs italic text-left"> <%= message %> </p>
+                <% end %>
+            </div>
+
+            <div class= "bg-indigo-500 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-fit text-center content-center mt-4 mx-auto">
+                <%= form.submit%>
+            </div>
+        <% end %>
+    </div>

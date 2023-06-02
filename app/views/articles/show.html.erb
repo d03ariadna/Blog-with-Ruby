@@ -1,0 +1,30 @@
+
+<section class="max-w-xs rounded overflow-hidden shadow-xl block py-8 mx-auto border border-slate-200">
+    <h1 class="font-bold text-2xl"><%= @article.title %></h1>
+
+    <p class="mt-2 text-slate-500"><%= @article.body %></p>
+
+    <button class="bg-indigo-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-fit text-center content-center mt-8">
+        <%= link_to "Edit", edit_article_path(@article) %>
+    </button>
+    <button class="bg-transparent hover:bg-red-500 text-red-500 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+        <%= link_to "Destroy", article_path(@article), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                    } %>
+    </button>
+</section>
+
+
+<div class="mx-auto content-center text-center">
+  
+    
+</div>
+
+<div class="content-center text-center">
+    <button class="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline w-fit mt-8 mx-auto">
+        <%= link_to "Go Home", root_path%>
+    </button>
+</div>
+
+
